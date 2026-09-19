@@ -15,7 +15,7 @@ const fs=require('node:fs/promises');
   page.on('request',r=>{if(!r.url().startsWith(base)&&!r.url().startsWith('data:')&&!r.url().startsWith('blob:'))unexpectedRequests.push(r.url());});
   await page.goto(base);const favicon=await page.locator('link[rel=icon]').getAttribute('href');assert.equal((await page.request.get(new URL(favicon,base).href)).status(),200);await page.evaluate(()=>document.fonts.ready);
   await fs.mkdir('test-results',{recursive:true});
-  await page.screenshot({path:'test-results/login.png',fullPage:true});
+  await page.screenshot({path:'test-results/login.png',fullPage:true});assert.equal(await page.locator('.art-grid').count(),0);assert.match(await page.locator('.art-card-name').textContent(),/^Hello/);for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.locator('.art-card').isVisible());assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}await page.screenshot({path:'test-results/login-tablet.png',fullPage:true});await page.setViewportSize({width:390,height:844});await page.screenshot({path:'test-results/login-mobile.png',fullPage:true});await page.setViewportSize({width:1440,height:1000});
   await page.locator('[name=username]').fill('wrong');await page.locator('[name=password]').fill('1234');await page.locator('#login-form [type=submit]').click();assert.match(await page.locator('#login-error').textContent(),/admin/);
   await page.locator('[data-action=fill-login]').click();await page.locator('#login-form [type=submit]').click();await page.locator('#live-card').waitFor();
   assert.equal(await page.locator('select').count(),0);

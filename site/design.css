@@ -20,3 +20,6 @@
 
 .preset-edit{display:flex;align-items:flex-end;gap:10px;margin-top:24px}.preset-edit label{flex:1;min-width:0}.card-details{font-size:max(9px,1.8cqw)}.card-role{font-size:max(10px,2cqw)}.reverse p{font-size:max(9px,2cqw)}.card-index{font-size:max(7px,1.5cqw)}.nav-link{font-size:13px}.detail-row .field-toggle{font-size:12px}.detail-row input:not([type=checkbox]){font-size:12px}.help{font-size:12px}.choices span{font-size:12px}.preset-options button{font-size:11px}@media(max-width:600px){.nav-link{font-size:11px}.detail-row input:not([type=checkbox]){font-size:16px}.detail-row .field-toggle{font-size:11px}.help{font-size:11px}.stage-caption{font-size:9px}}
 
+
+/* Login artwork remains visible at every size, without a background grid. */
+.art-note{font-size:11px;line-height:1.6;font-weight:600;letter-spacing:.1em;color:var(--ink);margin-top:36px}.login-art{padding-bottom:8px}@media(max-width:600px){.login-art{display:block;width:min(100%,340px);padding:18px 22px 8px 5px;margin:23px auto 0}.art-card{padding:23px 24px}.art-card .card-brand{font-size:17px}.art-card .card-brand>span{display:block;font-size:5px;letter-spacing:.7px}.art-card-name{font-size:36px;margin:26px 0 23px}.art-card-name>span{font-size:7px;letter-spacing:.7px}.art-note{font-size:10px;margin-top:34px;letter-spacing:.07em}.login-main{gap:26px}}
