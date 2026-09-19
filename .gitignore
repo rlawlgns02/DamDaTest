@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+*.log
+
+# Original user logo copies; deployed copies live in site/logo.
+/logo/
+/site/logo/

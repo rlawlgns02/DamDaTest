@@ -1,0 +1,11 @@
+{
+  "name": "damda-design-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node preview.cjs",
+    "check": "node --check site/app.js && node --check preview.cjs",
+    "test:browser": "node verify-browser.cjs"
+  },
+  "devDependencies": { "playwright": "^1.63.0" }
+}
